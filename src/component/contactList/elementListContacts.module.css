@@ -1,0 +1,14 @@
+.list {
+  font-size: 18px;
+  line-height: 2.2;
+}
+
+.btn {
+  margin-left: 10px;
+  border-radius: 5px;
+  border: solid 1px rgb(12, 12, 12);
+}
+
+.btn:active {
+  background-color: blue;
+}
