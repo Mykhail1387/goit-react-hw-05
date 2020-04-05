@@ -9,6 +9,7 @@ const Filter = ({ value, onchangeFilter }) => (
             type="text"
             value={value}
             onChange={onchangeFilter}
+            className={styles.input}
         />
     </div>
 )

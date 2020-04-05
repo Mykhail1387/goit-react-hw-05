@@ -45,6 +45,8 @@ export default class ContactForm extends Component {
                             value={name}
                             onChange={this.handleChange}
                             autoComplete="off"
+                            className={styles.input}
+
                         />
                     </label>
 
@@ -57,9 +59,10 @@ export default class ContactForm extends Component {
                             onChange={this.handleChange}
                             autoComplete="off"
                             minLength={5}
+                            className={styles.input}
                         />
                     </label>
-                    <button className={styles.btn} type="submit">add contact</button>
+                    <button className={styles.btn} type="submit">Add contact</button>
                 </form>
             </>
         )

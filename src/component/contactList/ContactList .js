@@ -2,18 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ElementListContact from './elementListContact';
 
-const ContactList = ({ listContacts, onDeleteContact }) =>
-    (
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import forContactList from '../transitions/forContactList.module.css';
+
+const ContactList = ({ listContacts, onDeleteContact }) => {
+    return (
         <>
-            <ul>
-
-                {listContacts.map(list =>
-                    < ElementListContact key={list.id} list={list} onDeleteContact={onDeleteContact} />
-                )}
-
-            </ul>
+            <TransitionGroup component="ul">
+                {listContacts.map(list => (
+                    <CSSTransition key={list.id} timeout={250} unmountOnExit classNames={forContactList}>
+                        < ElementListContact list={list} onDeleteContact={onDeleteContact} />
+                    </CSSTransition>
+                ))}
+            </TransitionGroup>
         </>
     )
+}
+
 
 ContactList.propTypes = {
     onDeleteContact: PropTypes.func.isRequired,
